@@ -1,3 +1,4 @@
+/******************Program to add node in a a BST iteratively******************/////////
 #include <stdio.h>
 #include <stdarg.h>
 struct node{
@@ -54,33 +55,11 @@ void main(){
 
 	}
 void traverse(struct node *nodes){
-	/*struct node *runner=nodes;
-	printf("%d check\n",runner->data);
-	if(runner->left==NULL){
-		printf("%d",runner->data);
-		printf("\nprinting left\n");
+	
+	if(nodes!=NULL){
+		traverse(nodes->left);
+		traverse(nodes->right);
+		printf("%d ",nodes->data);
 	}
-	else{
-	runner=runner->left;
-	printf("Called traverse left");
-	traverse(runner);
-	}
-	printf("%d",runner->data);
-	printf("\nprinting root\n");
-	if(runner->right==NULL){
-	printf("%d",runner->data);
-	printf("\nprinting right\n");
-	}
-	else{
-	runner=runner->right;
-	printf("Called traverse right");
-	traverse(runner);*/
-	if (nodes->left != NULL){
-        traverse (nodes->left);
-    }
-    printf("%d\t", nodes->data);
-    if (nodes->right != NULL){
-        traverse (nodes->right);
-    }
 	
 }
