@@ -31,8 +31,10 @@ class numbertostring{
 				s=one[mod]+s;
 			}
 			//System.out.println("Mod Value "+mod);
+			boolean flag=false;
 			if(level>=2){
 				String temp="";
+				flag=false;
 				if(i!=0 && level!=2){
 					int mod2=i%10;
 					temp=word[mod2]+one[mod];
@@ -41,12 +43,14 @@ class numbertostring{
 					if(mod2==1){
 						temp="";
 						temp=exceptions[mod];
+						flag=true;
 					}
 				}
 				else{
-					temp=one[mod];
+					if(!one[mod].equals(""))
+						temp=one[mod];
 				}
-				//if(!one[mod].equals(""))
+				if(!one[mod].equals("") || flag)
 					s=temp+finalw[finall]+s;
 				finall++;
 			}
